@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import AppCard from '../components/AppCard.astro';
+import { apps } from '../data/apps';
+import { site } from '../data/site';
+import photo from '../assets/shane.jpg';
+
+const socials = site.socials.filter((s) => s.url);
+---
+<Base>
+  <header class="wrap hero">
+    <Image class="avatar" src={photo} alt={`Photo of ${site.name}`} width={240} height={240}
+      widths={[120, 240]} sizes="120px" loading="eager" fetchpriority="high" />
+    <p class="role">{site.role}</p>
+    <h1>{site.name}</h1>
+    <p class="bio">{site.bio}</p>
+    <nav class="socials" aria-label="Social links">
+      {socials.map((s) => <a href={s.url} rel="me noopener">{s.label}</a>)}
+      {site.email && <a href={`mailto:${site.email}`}>Email</a>}
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h2 class="section-title">Apps</h2>
+    {apps.length > 0 ? (
+      <div class="grid">
+        {apps.map((app) => <AppCard app={app} />)}
+      </div>
+    ) : (
+      <p class="empty">New apps coming soon.</p>
+    )}
+  </main>
+</Base>
+
+<style>
+  .hero { padding-top: 64px; padding-bottom: 48px; }
+  .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 24px;
+    border: 3px solid var(--card); box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .35); }
+  .role { margin: 0 0 6px; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  h1 { margin: 0 0 14px; font-size: clamp(2.4rem, 9vw, 3.6rem); line-height: 1.05; letter-spacing: -.035em; }
+  .bio { margin: 0 0 24px; font-size: 1.12rem; color: var(--muted); max-width: 38rem; }
+  .socials { display: flex; flex-wrap: wrap; gap: 8px; }
+  .socials a { text-decoration: none; font-size: .92rem; font-weight: 500; padding: 7px 15px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--card); }
+  .socials a:hover { border-color: var(--fg); }
+
+  .section-title { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px; }
+  .grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 700px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  .empty { color: var(--muted); }
+</style>

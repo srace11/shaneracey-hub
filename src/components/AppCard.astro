@@ -1,0 +1,53 @@
+---
+import { statusLabel, type AppEntry } from '../data/apps';
+
+interface Props {
+  app: AppEntry;
+}
+const { app } = Astro.props;
+---
+<article class="card">
+  <img class="icon" src={app.icon} alt="" width="64" height="64" loading="lazy" />
+  <div class="body">
+    <div class="top">
+      <h3><a class="stretch" href={app.url}>{app.name}</a></h3>
+      <span class={`status ${app.status}`}>{statusLabel[app.status]}</span>
+    </div>
+    <p>{app.description}</p>
+    {(app.appStore || app.googlePlay) && (
+      <div class="stores">
+        {app.appStore && <a href={app.appStore} rel="noopener">App Store</a>}
+        {app.googlePlay && <a href={app.googlePlay} rel="noopener">Google Play</a>}
+      </div>
+    )}
+  </div>
+</article>
+
+<style>
+  .card { position: relative; display: flex; gap: 16px; align-items: flex-start; background: var(--card);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; transition: background .15s, border-color .15s; }
+  .card:hover { background: var(--card-hover); border-color: color-mix(in srgb, var(--fg) 25%, var(--line)); }
+  .card:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .icon { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+  .body { min-width: 0; flex: 1; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  h3 { margin: 0; font-size: 1.1rem; }
+  .stretch { text-decoration: none; outline: none; }
+  .stretch::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius); }
+  p { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
+
+  .status { font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+  .status.live { background: color-mix(in srgb, #16a34a 16%, transparent); color: #15803d; }
+  .status.beta { background: color-mix(in srgb, #d97706 18%, transparent); color: #b45309; }
+  .status.soon { background: color-mix(in srgb, var(--muted) 16%, transparent); color: var(--muted); }
+  @media (prefers-color-scheme: dark) {
+    .status.live { color: #4ade80; }
+    .status.beta { color: #fbbf24; }
+  }
+
+  /* Store links sit above the stretched card link so they stay clickable. */
+  .stores { position: relative; z-index: 1; display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .stores a { font-size: .8rem; font-weight: 600; text-decoration: none; padding: 5px 12px; border-radius: 999px;
+    background: var(--fg); color: var(--bg); }
+</style>

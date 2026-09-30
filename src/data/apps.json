@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "sample",
+    "name": "Sample App",
+    "description": "Placeholder entry. Replace with a real app, or delete it.",
+    "icon": "/apps/sample.svg",
+    "status": "beta",
+    "url": "https://sample.shaneracey.com",
+    "appStore": "",
+    "googlePlay": ""
+  }
+]
