@@ -60,6 +60,10 @@ npm run preview
    - **Environment variables:** `NODE_VERSION` = `22`
 4. **Save and Deploy**, then check `https://shaneracey-hub.pages.dev`.
 
+### Current setup: Cloudflare Worker
+
+The hub is currently deployed by the Worker named `shaneracey-com` (Workers Builds), not a Pages project. `wrangler.jsonc` in this repo tells the Worker to run `npm run build` and serve `dist/` as static files. Keep its `name` matching the Worker's name in the dashboard, or the deploy fails. The Worker's deploy command should be `npx wrangler deploy` (the default). Custom domains for a Worker live under **Settings > Domains & Routes** instead of **Custom domains**.
+
 ## Point shaneracey.com at the hub
 
 Right now `shaneracey.com` and `www.shaneracey.com` are attached to the Worker that deploys the older `srace11/shaneracey.com` repo. A hostname can only be attached to one project, so move it:
