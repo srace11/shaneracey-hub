@@ -1,11 +1,31 @@
 [
   {
-    "slug": "sample",
-    "name": "Sample App",
-    "description": "Placeholder entry. Replace with a real app, or delete it.",
-    "icon": "/apps/sample.svg",
+    "slug": "wayspeed",
+    "name": "Way Speed",
+    "description": "One LiDAR sensor beside the track returns a full sprint velocity curve and automatic splits after every rep.",
+    "icon": "/apps/wayspeed.png",
     "status": "beta",
-    "url": "https://sample.shaneracey.com",
+    "url": "https://wayspeed.net",
+    "appStore": "",
+    "googlePlay": ""
+  },
+  {
+    "slug": "photo-painter",
+    "name": "Photo Painter",
+    "description": "Turn your photos into paintings.",
+    "icon": "/apps/photo-painter.svg",
+    "status": "soon",
+    "url": "",
+    "appStore": "",
+    "googlePlay": ""
+  },
+  {
+    "slug": "volleyball-jump",
+    "name": "Volleyball Jump Mechanics",
+    "description": "Analyze your approach and jump to add height at the net.",
+    "icon": "/apps/volleyball-jump.svg",
+    "status": "soon",
+    "url": "",
     "appStore": "",
     "googlePlay": ""
   }

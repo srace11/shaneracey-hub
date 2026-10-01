@@ -10,7 +10,7 @@ export interface AppEntry {
   description: string;
   icon: string;
   status: AppStatus;
-  url: string;
+  url?: string;
   appStore?: string;
   googlePlay?: string;
 }

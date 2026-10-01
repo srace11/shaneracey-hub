@@ -6,11 +6,11 @@ interface Props {
 }
 const { app } = Astro.props;
 ---
-<article class="card">
+<article class:list={['card', { linked: app.url }]}>
   <img class="icon" src={app.icon} alt="" width="64" height="64" loading="lazy" />
   <div class="body">
     <div class="top">
-      <h3><a class="stretch" href={app.url}>{app.name}</a></h3>
+      <h3>{app.url ? <a class="stretch" href={app.url}>{app.name}</a> : app.name}</h3>
       <span class={`status ${app.status}`}>{statusLabel[app.status]}</span>
     </div>
     <p>{app.description}</p>
@@ -26,7 +26,7 @@ const { app } = Astro.props;
 <style>
   .card { position: relative; display: flex; gap: 16px; align-items: flex-start; background: var(--card);
     border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; transition: background .15s, border-color .15s; }
-  .card:hover { background: var(--card-hover); border-color: color-mix(in srgb, var(--fg) 25%, var(--line)); }
+  .card.linked:hover { background: var(--card-hover); border-color: color-mix(in srgb, var(--fg) 25%, var(--line)); }
   .card:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
   .icon { width: 64px; height: 64px; border-radius: 15px; flex: none; }
   .body { min-width: 0; flex: 1; }

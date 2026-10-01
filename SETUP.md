@@ -32,6 +32,7 @@ Add an object to `src/data/apps.json` and drop its icon into `public/apps/`:
 
 - `status` must be `live`, `beta` or `soon` (shown as Live, Beta, Coming soon). Anything else fails the build with a clear error.
 - Leave `appStore` or `googlePlay` empty to hide that store button.
+- Leave `url` empty for a placeholder card that isn't clickable yet.
 - Cards appear in the same order as the JSON array.
 
 Commit and push. Cloudflare redeploys in about a minute.
