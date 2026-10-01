@@ -10,14 +10,14 @@ const { app } = Astro.props;
   <img class="icon" src={app.icon} alt="" width="64" height="64" loading="lazy" />
   <div class="body">
     <div class="top">
-      <h3>{app.url ? <a class="stretch" href={app.url}>{app.name}</a> : app.name}</h3>
+      <h3>{app.url ? <a class="stretch" href={app.url} target="_blank" rel="noopener">{app.name}</a> : app.name}</h3>
       <span class={`status ${app.status}`}>{statusLabel[app.status]}</span>
     </div>
     <p>{app.description}</p>
     {(app.appStore || app.googlePlay) && (
       <div class="stores">
-        {app.appStore && <a href={app.appStore} rel="noopener">App Store</a>}
-        {app.googlePlay && <a href={app.googlePlay} rel="noopener">Google Play</a>}
+        {app.appStore && <a href={app.appStore} target="_blank" rel="noopener">App Store</a>}
+        {app.googlePlay && <a href={app.googlePlay} target="_blank" rel="noopener">Google Play</a>}
       </div>
     )}
   </div>
