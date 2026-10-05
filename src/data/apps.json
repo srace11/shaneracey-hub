@@ -20,12 +20,12 @@
     "googlePlay": ""
   },
   {
-    "slug": "volleyball-jump",
-    "name": "Volleyball Jump Mechanics",
-    "description": "Analyze your approach and jump to add height at the net.",
-    "icon": "/apps/volleyball-jump.svg",
+    "slug": "statjump",
+    "name": "Stat Jump",
+    "description": "Turns a phone video of your volleyball approach and jump into numbers you can train against.",
+    "icon": "/apps/statjump.svg",
     "status": "soon",
-    "url": "https://volleyball.shaneracey.com",
+    "url": "https://statjump.shaneracey.com",
     "appStore": "",
     "googlePlay": ""
   }
