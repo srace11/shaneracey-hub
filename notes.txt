@@ -1,9 +1,26 @@
 Brand Guidelines
 
 Why we exist? Mission, vision or purpose. Some brands have all, others only one. I like just one answer.
-
 Who we are? Think of it like values, principles, beliefs or philosophy.
-
 What we do? This is usually a descriptive, but differentiating statement. It could be a USP.
-
 How do we express ourselves? Personality. Bold? Sophisticated? Down to earth? Disruptive?
+
+
+model notes
+- we're using the full pose model and not the heavy one 
+for the webapp because of cloudflares file upload limit
+- might need to turn into a python script for now and not a webapp due to limitations
+
+
+
+
+website
+- hero
+- how it works video
+- text how it works with facts, repeateable, all on device
+- coming soon features
+- about me 
+- pricing
+- faq
+
+https://statjump.shaneracey.com/lab-9t7yd7kufc
