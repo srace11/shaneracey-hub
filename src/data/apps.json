@@ -10,16 +10,6 @@
     "googlePlay": ""
   },
   {
-    "slug": "photo-painter",
-    "name": "Photo Painter",
-    "description": "Turn your photos into paintings.",
-    "icon": "/apps/photo-painter.svg",
-    "status": "soon",
-    "url": "",
-    "appStore": "",
-    "googlePlay": ""
-  },
-  {
     "slug": "statjump",
     "name": "Stat Jump",
     "description": "Turns a phone video of your volleyball approach and jump into numbers you can train against.",
