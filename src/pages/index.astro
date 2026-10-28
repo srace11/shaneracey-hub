@@ -13,7 +13,7 @@ const socials = site.socials.filter((s) => s.url);
     <Image class="avatar" src={photo} alt={`Photo of ${site.name}`} width={240} height={240}
       widths={[120, 240]} sizes="120px" loading="eager" fetchpriority="high" />
     <p class="role">{site.role}</p>
-    <h1>{site.name}</h1>
+    <h1>{site.heading}</h1>
     <p class="bio">{site.bio}</p>
     <nav class="socials" aria-label="Social links">
       {socials.map((s) => <a href={s.url} rel="me noopener">{s.label}</a>)}
