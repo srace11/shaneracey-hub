@@ -23,7 +23,7 @@
     "slug": "photo-painter",
     "name": "Photo Painter",
     "description": "An e-ink photo frame running my own firmware. A phone app dithers photos to the six-color screen, and the frame pulls the next one from the cloud on a schedule.",
-    "icon": "/apps/photo-painter.svg",
+    "icon": "/apps/photo-painter.png",
     "status": "beta",
     "url": "",
     "appStore": "",
